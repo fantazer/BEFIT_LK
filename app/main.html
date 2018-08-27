@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang='ru'>
+	<!--create by ANATOLY KUZNETSOV-->
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<!--colors-tabs-->
+		<meta name="theme-color" content="#000" />
+		<meta name="msapplication-navbutton-color" content="#000" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+		<!--SEO-->
+		<title>Document</title>
+		<meta name="description" itemprop="description" content="" />
+		<!--build:css css/vendor.css-->
+		<link rel="stylesheet" href="bower/normalize.css/normalize.css" />
+		<!--endbuild-->
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-edit.css" />
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic" rel="stylesheet" />
+	</head>
+	<!-- mixin nameMixin()-->
+	<!-- - var args = Array.prototype.slice.call(arguments)-->
+	<!-- - for item in args-->
+
+	<body>
+		<div class="container">
+			<!--block header-->
+			<div class="header">
+				<a class="logo" href="#">
+					<img src="img/logo.svg" alt="" />
+				</a>
+				<div class="clock">11:24</div>
+				<div class="search">
+					<svg class="icon">
+						<use xlink:href="#search"></use>
+					</svg>
+					<input class="search-input" type="text" placeholder="поиск" />
+				</div>
+				<a class="user" href="#">
+					<div class="user__name">
+						<div class="user__name-hallow">Привет,</div>
+						<div class="user__name-el"> Александр</div>
+						<div class="user-avatar">
+							<div class="user-avatar-char hidden">А</div>
+							<img src="img/user.png" alt="" />
+						</div>
+					</div>
+					<div class="user__nav user__msg">
+						<div class="user__nav-icon">
+							<svg class="icon">
+								<use xlink:href="#message"></use>
+							</svg>
+						</div>
+						<div class="user__nav-val">3</div>
+					</div>
+					<div class="user__nav user__notice">
+						<div class="user__nav-icon">
+							<svg class="icon">
+								<use xlink:href="#bell"></use>
+							</svg>
+						</div>
+						<div class="user__nav-val">2</div>
+					</div>
+					<div class="user__nav user__power">
+						<svg class="icon">
+							<use xlink:href="#off"></use>
+						</svg>
+					</div>
+				</a>
+			</div>
+			<!--block header end-->
+			<div class="content-wrap">
+				<div class="toolbar">
+					<a class="toolbar__el" href="#">
+						<div class="toolbar__el-icon">
+							<svg class="icon">
+								<use xlink:href="#operator"></use>
+							</svg>
+						</div>
+						<div class="toolbar__el-text">Оператор</div>
+					</a>
+					<a class="toolbar__el-sub" href="#">Заказы</a>
+					<a class="toolbar__el-sub" href="#">Клиенты</a>
+					<a class="toolbar__el" href="#">
+						<div class="toolbar__el-icon">
+							<svg class="icon">
+								<use xlink:href="#apple"></use>
+							</svg>
+						</div>
+						<div class="toolbar__el-text">Диетолог</div>
+					</a>
+					<a class="toolbar__el" href="#">
+						<div class="toolbar__el-icon">
+							<svg class="icon">
+								<use xlink:href="#calendar"></use>
+							</svg>
+						</div>
+						<div class="toolbar__el-text">История</div>
+					</a>
+				</div>
+				<div class="content">текст</div>
+			</div>
+		</div>
+		<!--build:js js/combined.js-->
+		<script src="bower/jquery/dist/jquery.js"></script>
+		<script src="bower/svg4everybody/dist/svg4everybody.js"></script>
+		<!--script(src='bower/owl.carousel/dist/owl.carousel.min.js')-->
+		<!--script(src="js/jquery.smoothscroll.js")-->
+		<!-- endbuild-->
+		<script src="js/script.js"></script>
+		<script src="js/script-edit.js"></script>
+	</body>
+
+</html>

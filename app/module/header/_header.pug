@@ -1,0 +1,27 @@
+mixin header()
+	//block header
+	.header
+		a(href="#").logo
+			img(src="img/logo.svg", alt="")
+		.clock 11:24
+		.search
+			+icon("search","icon")
+			input(type="text" placeholder="поиск" class="search-input")
+		a(href="#").user
+			.user__name
+				.user__name-hallow Привет,
+				.user__name-el  Александр
+				.user-avatar
+					.user-avatar-char.hidden А
+					img(src="img/user.png", alt="")
+			.user__nav.user__msg
+				.user__nav-icon
+					+icon("message","icon")
+				.user__nav-val 3
+			.user__nav.user__notice
+				.user__nav-icon
+					+icon("bell","icon")
+				.user__nav-val 2
+			.user__nav.user__power
+				+icon("off","icon")
+	//block header end

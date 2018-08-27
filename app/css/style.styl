@@ -1,0 +1,161 @@
+@import 'rupture'
+@import "variable/_function.styl"
+@import "variable/_fonts.styl"
+@import "variable/_ie.styl"
+@import "icon/sprite.css"
+@import "variable/_helper.styl"
+@import "variable/_default.styl"
+@import "variable/_elements.styl"
+@import "variable/_constant.styl"
+@import "../module/**/*"
+
+body
+	@extend .type--main
+	font-family $v-font
+	color $main-text-color
+	line-height 1.2
+	letter-spacing 0.01em
+
+.main-cont
+	center(1200px,10px)
+
+
+.container
+	background: #f2f3f6
+	min-height: 100vh
+	f()
+	fl()
+.header
+	height: 70px
+	background: white
+	f()
+.logo
+	width: 220px
+	flex(mid)
+.clock
+	width: 90px
+	flex(mid)
+	@extend .type--md
+	border-left 1px solid rgba(0, 0, 0, 0.12)
+	border-right 1px solid rgba(0, 0, 0, 0.12)
+
+.search
+	position: relative
+	flex-grow 1
+	.icon
+		size 20px
+		fill $gray
+		position: absolute
+		top 25px
+		left 35px
+		z-index 5
+.search-input
+	position: absolute
+	width: 100%
+	height: 100%
+	left 0
+	top 0
+	padding-left: 75px
+	border 0
+	outline none
+//.icon
+.user
+	flex(mid)
+
+.user__name
+	f()
+	tr(all)
+	justify-content: center
+	align-items: center
+	border-left 1px solid rgba(0, 0, 0, 0.12)
+	border-right 1px solid rgba(0, 0, 0, 0.12)
+	height: 100%
+	padding: 10px 25px
+	&:hover
+		background-image linear-gradient(89deg, #78d822 0%, #46c81f 100%)
+		.user__name-hallow,
+		.user__name-el
+			color white
+.user__name-hallow
+	opacity .5
+.user__name-el
+	margin-left: 5px
+	margin-right: 20px
+.user-avatar-char
+	round()
+	flex(mid)
+	size 40px
+	background-color #cfffc2
+	color $green
+//.user-avatar
+.user__nav
+	size 70px
+	flex(mid)
+	border-right 1px solid rgba(0, 0, 0, 0.12)
+	position: relative
+	.icon
+		size 20px
+		fill $gray
+	&:hover
+		background-image linear-gradient(89deg, #78d822 0%, #46c81f 100%)
+		.icon
+			fill white
+		.user__nav-val
+			background: white
+			color $green
+//.user__msg
+//.user__notice
+//.user__nav-icon
+.user__nav-val
+	round()
+	flex(mid)
+	position: absolute
+	top 15px
+	right: 15px
+	size 20px
+	background: $green
+	color white
+	@extend .type--sm
+.user__power
+	&:hover
+		background-image linear-gradient(to right, #f80000 0%, #c50000 100%)
+
+.content-wrap
+	f()
+	height: 100%
+	flex-grow 1
+.toolbar
+	width: 221px
+	background: #31373d
+.content
+	width: calc(100% - 220px)
+
+.toolbar
+	padding-top: 25px
+.toolbar__el
+	f()
+	padding: 15px 30px
+	transition background .4s
+	border-left 2px solid transparent
+	&:hover
+		background: #394148
+		border-left 2px solid $green
+		.toolbar__el-text
+			color white
+.toolbar__el-sub
+	padding: 15px 30px 15px 70px
+	color #aab4c7
+	display: block
+	border-left 2px solid transparent
+	&:hover
+		background: #394148
+		border-left 2px solid $green
+		color white
+.toolbar__el-icon
+	margin-right: 15px
+	.icon
+		size 20px
+		fill $gray
+.toolbar__el-text
+	color #aab4c7
+	margin-top: 1px

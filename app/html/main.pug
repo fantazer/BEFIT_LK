@@ -1,0 +1,23 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.container
+	+header()
+	.content-wrap
+		.toolbar
+			a(href="#").toolbar__el
+				.toolbar__el-icon
+					+icon("operator","icon")
+				.toolbar__el-text Оператор
+			a(href="#").toolbar__el-sub Заказы
+			a(href="#").toolbar__el-sub Клиенты
+			a(href="#").toolbar__el
+				.toolbar__el-icon
+					+icon("apple","icon")
+				.toolbar__el-text Диетолог
+			a(href="#").toolbar__el
+				.toolbar__el-icon
+					+icon("calendar","icon")
+				.toolbar__el-text История
+		.content текст
+include ./block_html/_script.pug
