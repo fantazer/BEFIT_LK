@@ -234,8 +234,6 @@ table($border = true, $striped = true, $condensed = false)
 	if $border
 		border: 1px solid #ddd
 		border-collapse: separate
-		*border-collapse: collapsed
-		border-radius: 4px
 
 		th + th, td + td, th + td, td + th
 			border-left: 1px solid #ddd
@@ -245,30 +243,7 @@ table($border = true, $striped = true, $condensed = false)
 		tbody:first-child tr:first-child td
 			border-top: 0
 
-		thead:first-child tr:first-child th:first-child
-		tbody:first-child tr:first-child td:first-child
-			border-radius: 4px 0 0 0
 
-		thead:first-child tr:first-child th:last-child
-		tbody:first-child tr:first-child td:last-child
-			border-radius: 0 4px 0 0
-
-		thead:last-child tr:last-child th:first-child
-		tbody:last-child tr:last-child td:first-child
-			border-radius: 0 0 0 4px
-
-		thead:last-child tr:last-child th:last-child
-		tbody:last-child tr:last-child td:last-child
-			border-radius: 0 0 4px 0
-
-	if $striped
-		tbody tr:nth-child(odd) td
-		tbody tr:nth-child(odd) th
-			background-color: #f9f9f9
-
-		tbody tr:hover td
-		tbody tr:hover th
-			background-color: #f5f5f5
 
 //breadcrumb
 //

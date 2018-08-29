@@ -1,5 +1,78 @@
 $(document).ready(function(){
 
+	//nice-select
+	$('.select-beauty').niceSelect();
+	//nice-select===end
+
+	//append table row
+	$('.table-info__add').click(function(){
+		var tableRow = $('.is-tr--empty').eq(0).clone().removeClass('hidden');
+		$('.is-table .is-tbody').append(tableRow)
+	});
+
+	//autosize textarea
+	autosize($('.table-info__name textarea'));
+	//autosize textarea===end
+
+	//animate btn-save
+	$('.chart-save').click(function(){
+		if(!$(this).hasClass('chart-save--animate-true')){
+			$(this).addClass('chart-save--animate');
+			$('.chart-save__text').text('Сохранение');
+			$('.chart-save__bar').animate({
+					 width: '100%'
+			 },
+			 {
+				 easing: 'swing',
+				 duration: 1500,
+				 complete: function(){
+					$('.chart-save').addClass('chart-save--animate-true');
+					$('.chart-save__text').text('Сохранено');
+				}
+			});
+		}
+	});
+
+	$('.chart-get__reset').click(function(){
+		$('.chart-save').removeClass('chart-save--animate-true');
+		$('.chart-save').removeClass('chart-save--animate');
+		//$('.chart-save').removeClass('chart-save--open');
+		$('.chart-save__bar').css('width',0)
+		$('.chart-save__text').text('Сохранить день');
+	});
+	//animate btn-save===end
+
+	//bar
+	var ctx = document.getElementById("donut");
+	var value = ctx.getAttribute("data-val");
+	var arrayValue = value.split(',');
+	console.log(arrayValue);
+	var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [" Белки", " Жиры", " Углеводы"],
+        datasets: [{
+            data: arrayValue,
+            backgroundColor: [
+                '#65d9ce',
+                '#ffdb4d',
+                '#ff6600'
+            ]
+        }]
+    },
+    options: {
+			legend:false,
+			cutoutPercentage: 70
+		}
+	});
+	//bar===end
+
+
+	//line-bar
+		$('.days-row__bar-el').each(function(){
+			$(this).css('width', $(this).data('bar')+'%');
+		});
+	//line-bar===end
 
 	/* ###### For only ies  ######*/
 	//if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
@@ -127,3 +200,4 @@ $(document).ready(function(){
 	catch( e ){}
 
 }( window, document ) );
+

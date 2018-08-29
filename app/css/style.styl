@@ -17,7 +17,9 @@ body
 	letter-spacing 0.01em
 
 .main-cont
-	center(1200px,10px)
+	margin-left: auto
+	margin-right: auto
+	width: 93%
 
 
 .container
@@ -25,6 +27,7 @@ body
 	min-height: 100vh
 	f()
 	fl()
+	min-width 1280px
 .header
 	height: 70px
 	background: white
@@ -129,7 +132,7 @@ body
 	background: #31373d
 .content
 	width: calc(100% - 220px)
-
+	padding: 40px 0
 .toolbar
 	padding-top: 25px
 .toolbar__el
@@ -142,6 +145,11 @@ body
 		border-left 2px solid $green
 		.toolbar__el-text
 			color white
+.toolbar__el--active
+	background: #394148
+	border-left 2px solid $green
+	.toolbar__el-text
+		color white
 .toolbar__el-sub
 	padding: 15px 30px 15px 70px
 	color #aab4c7
@@ -159,3 +167,513 @@ body
 .toolbar__el-text
 	color #aab4c7
 	margin-top: 1px
+
+.title
+	flex(between)
+	margin-bottom: 35px
+.title-text
+	color dark
+	@extend .type--lg
+	font-weight 600
+
+.title-btn
+	@extend .btn--md
+	background: white
+	box-shadow 0 2px 4px rgba(63, 95, 151, 0.16)
+	flex(mid)
+	border 0!important
+	&:hover
+		box-shadow 0 2px 4px transparent
+	.icon
+		size 15px
+		margin-right: 10px
+.title-btn-icon
+	flex(mid)
+.title-btn__text
+	font-weight 600
+.days-wrap
+	background: white
+	padding: 30px 0 80px 0
+	margin-bottom: 30px
+//.main-cont
+.days-tab
+	f()
+	border-bottom 1px solid rgba(0, 0, 0, 0.08)
+	margin-bottom: 30px
+.days-tab__el
+	padding-bottom: 15px
+	margin-right: 40px
+	color dark
+	font-weight:600
+	opacity .6
+	cp()
+	&:hover
+		color black
+		opacity 1
+.days-tab__el--active
+	opacity 1
+	color $green!important
+	position: relative
+	&:before
+		content ''
+		position: absolute
+		width: 100%
+		height: 2px
+		background: green
+		bottom -1px
+		left: 0px
+.days-tab-wrap
+	f()
+.days-el
+	+below(1400px)
+		size 130px
+	f()
+	fl()
+	cp()
+	br(5px)
+	tr(all)
+	size 160px
+	margin-right: 20px
+	padding: 15px 15px 25px 15px
+	border 1px solid rgba(0, 0, 0, 0.08)
+	&:hover
+		border 1px solid transparent
+		.days-el__name
+			background-color rgba(255, 255, 255, 0.5)
+		.days-el__title
+			color white
+	&:last-child
+		margin-right: 0
+.days-el__name
+	tr(all)
+	size 40px
+	flex(mid)
+	round()
+.days-el__title
+	tr(all)
+	margin-top: auto
+.days-el--pn
+	.days-el__name
+		background-color rgba(84, 0, 255, 0.3)
+		color #5200ff
+	&:hover
+		background-color #8000ff
+		box-shadow 0 10px 15px rgba(128, 0, 255, 0.28)
+
+.days-el--vt
+	.days-el__name
+		background-color rgba(0, 86, 255, 0.3)
+		color #0056ff
+	&:hover
+		box-shadow 0 10px 15px rgba(0, 83, 255, 0.28)
+		background-color #0053ff
+.days-el--sr
+	.days-el__name
+		background-color rgba(0, 195, 255, 0.3)
+		color #00c3ff
+	&:hover
+		box-shadow 0 10px 15px rgba(51, 205, 255, 0.28)
+		background-color #33cdff
+.days-el--ht
+	.days-el__name
+		background-color rgba(50, 242, 0, 0.31)
+		color #26b101
+	&:hover
+		box-shadow 0 10px 15px rgba(65, 207, 28, 0.28)
+		background-color $green
+.days-el--pt
+	.days-el__name
+		background-color rgba(249, 215, 0, 0.3)
+		color #ffaa00
+	&:hover
+		box-shadow 0 10px 15px rgba(252, 202, 0, 0.28)
+		background-color #fcca00
+.days-el--sb
+	.days-el__name
+		background-color rgba(255, 87, 0, 0.3)
+		color rgba(249, 17, 0, 0.51)
+	&:hover
+		box-shadow 0 10px 15px rgba(249, 133, 0, 0.28)
+		background-color #f98500
+.days-el--vs
+	.days-el__name
+		background-color rgba(255, 0, 70, 0.3)
+		color #ef3265
+	&:hover
+		box-shadow 0 10px 15px rgba(246, 0, 84, 0.28)
+		background-color #f60054
+
+.days-tab__text
+	margin-left: auto
+	opacity .6
+	color $gray
+
+.days-empty
+	flex(mid)
+	fl()
+	cp()
+	margin-top: 100px
+	&:hover
+		.days-empty__icon
+			border 2px solid black
+			.icon
+				fill black
+		.days-empty__text
+			color black
+
+.days-empty__icon
+	round()
+	flex(mid)
+	size 60px
+	border 2px solid #dadbdd
+	margin-bottom: 30px
+	tr(all)
+	.icon
+		tr(all)
+		size 24px
+		fill #dadbdd
+.days-empty__text
+	tr(all)
+	color #dadbdd
+	@extend .type--md
+
+.days-row
+	box-shadow 0 2px 4px rgba(0, 0, 0, 0.06)
+	border-radius 5px
+	background-color #ffffff
+	margin-bottom: 20px
+	padding: 25px
+	f()
+	align-items: center
+	justify-content: space-between
+.days-row__title
+	@extend .type--md
+	font-weight 600
+	color black
+.days-row__cal
+	margin-left: 12%
+	margin-right: 5%
+.days-row__bar
+	width: 215px
+	height: 10px
+	br(10px)
+	f()
+.days-row__btn
+	flex(mid)
+	tr(all)
+	@extend .btn--md
+	padding: 5px 25px
+	height initial
+	@extend .type--main
+	opacity .6
+	margin-left: auto
+	margin-right: 30px
+	&:hover
+		opacity 1
+.arrow-toggle
+	round()
+	flex(mid)
+	cp()
+	tr(all)
+	size 32px
+	border 1px solid rgba(0,0,0,0.12)
+	&:hover
+		border 1px solid rgba(0,0,0,0.8)
+		.icon
+			fill rgba(0,0,0,1)
+	.icon
+		tr(all)
+		size 12px
+		fill $gray
+
+.days-row__bar-el
+	height: 100%
+.days-row__bar--carbohydrate
+	background: $blue
+.days-row__bar--fat
+	background: $yellow
+.days-row__bar--protein
+	background: $orange
+
+.days-row__bar
+	overflow hidden
+
+.chart-container
+	f()
+	padding: 30px
+	position: relative
+//.icon
+
+.book-row__title
+	display table-cell
+	 white-space nowrap
+.book-row__dot
+	display table-cell
+	border-bottom: 1px solid rgba(0,0,0,0.06)
+	width 100%
+.book-row__value
+	display table-cell
+	white-space nowrap
+.book-row
+	margin-bottom: 25px
+
+.chart-wrap
+	background: white
+	padding-bottom: 25px
+.chart-info
+	padding: 15px 45px 15px 15px
+	width: 35%
+	margin-left: 20px
+	border-right 1px solid rgba(112, 112, 112, 0.1)
+.chart-info__title
+	@extend .type--md
+	font-weight 600
+	margin-bottom: 20px
+
+.book-row__title-cont
+	f()
+	align-items: center
+.book-row__title-icon
+	size 16px
+	round()
+	border 3.5px solid $blue
+	margin-right: 10px
+.book-row__title-text
+	display: inline-block
+
+.book-row__title-icon-yellow
+	border-color: $yellow
+
+.book-row__title-icon-orange
+	border-color: $orange
+
+.chart-wrap__value
+	position: absolute
+	flex(mid)
+	fl()
+	left 50%
+	top 50%
+	transform translateY(-50%) translateX(-50%)
+	margin-top: -5px
+.chart-wrap__value-title
+	@extend .type--md
+	font-weight 600
+	margin-bottom: 10px
+	color black
+.chart-wrap__value-text
+	@extend .type--sm
+
+.chart-wrap__el
+	position: relative
+
+.arrow-toggle--chart
+	position: absolute
+	right: 25px
+	top 25px
+
+.chart-get
+	flex(mid)
+	fl()
+	width: 40%
+.chart-get__text
+	opacity .4
+	margin-bottom: 20px
+	cp()
+	tr(all)
+	&:hover
+		opacity: 1
+.chart-save
+	@extend .btn--md
+	@extend .btn--mark
+	margin-bottom: 25px
+	width: 260px
+	display: none
+.chart-save--open
+	flex(mid)
+	.icon
+		display: none
+.chart-save__text
+	z-index 2
+.chart-save__bar
+	display: none
+.chart-save__icon
+	margin-right: 15px
+	.icon
+		fill white
+		size 18px
+.chart-close
+	@extend .btn--md
+	width: 260px
+.chart-get__reset
+	opacity .4
+	margin-top: 20px
+	cp()
+	tr(all)
+	&:hover
+		opacity: 1
+
+.chart-save--animate
+	background: #eff1f5
+	box-shadow 0 0 0
+	position: relative
+	overflow hidden
+	.chart-save__bar
+		display: block
+		position: absolute
+		height: 100%
+		left 0
+		top 0
+		width: 0%
+		background: $green
+
+.chart-save--animate-true
+	.chart-save__icon
+		z-index 2
+	.icon
+		display: block !important
+
+
+
+.table-info__name
+	width: 30%
+	position: relative
+.table-info__name-val
+	width: 100%
+	height: 100%
+	padding: 15px 25px
+	border 0
+	resize: none
+	outline: 0 !important
+	display: block
+.table-info__choose
+	width: 15%
+.table-info__type
+	width: 5%
+.table-info__val
+	width: 12%
+.table-info__cost
+	width: 15%
+	position: relative
+.table-info
+	.is-td
+		border 0px
+		border-bottom 1px solid #eeeeee
+	.is-thead
+		background: #9099aa
+		opacity 0.7
+		@extend .type--sm
+		color white
+		text-align: center
+		.table-info__name
+			padding: 15px 25px
+			text-align: left
+		.table-info__choose
+			text-align: left
+		.table-info__choose,
+		.table-info__type,
+		.table-info__val,
+		.table-info__cost
+			padding: 15px 5px
+	.is-tbody
+		.is-td
+			padding: 0
+		//.table-info__name
+		.table-info__choose
+			padding: 15px 10px
+		.table-info__val
+			padding: 15px 5px
+			text-align: center
+		.table-info__type
+			padding: 15px 5px
+			text-align: center
+		.table-info__cost
+			text-align: center
+			padding: 15px 5px
+			position: relative
+		.is-tr
+			&:hover
+				background: #eff1f5
+				.table-info__val
+					width: 10%
+				.table-info__cost
+					width: 19%
+				.table-info__remove
+					margin-right: -72px
+	.is-tr
+		f()
+		justify-content: space-between
+		//overflow: hidden
+		cp()
+
+.table-info__remove
+	flex(mid)
+	background: #ee2e2e
+	height: 100%
+	margin-left: auto
+	padding: 10px 15px
+	margin-right: -120px
+	tr(all)
+	cp()
+	&:hover
+		margin-right: 0px!important
+.table-info__remove-icon
+	.icon
+		size 16px
+		fill white
+		opacity .8
+		margin-right: 10px
+.table-info__remove-text
+	color white
+	opacity .8
+
+.table-info__cost-wrap
+	flex(mid)
+	position: absolute
+	width: 100%
+	height: 100%
+	top 0
+	left 0
+	text-align: center
+	overflow hidden
+.table-info__cost-val
+	width: 100%
+	align-self flex-start
+	padding-top: 15px
+
+
+.nice-select
+	border: 0px
+
+.table-info__add
+	width: 95%
+	margin-left: auto
+	margin-right: auto
+	flex(mid)
+	margin-top: 25px
+	@extend .btn--md
+	.icon
+		size 16px
+		margin-right: 10px
+
+.fakeCircle
+	position: absolute
+	z-index: 0
+	border-radius: 100%
+	background-color: #dadce8
+	size 176px
+	top: 2px
+	left: 2px
+
+.fakeCircle:after
+	content ''
+	position: absolute
+	z-index: 1
+	round()
+	size 156px
+	background: white
+	top: 10px
+	left: 10px
+
+#donut
+	z-index 10
+	position: relative

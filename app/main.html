@@ -15,6 +15,7 @@
 		<meta name="description" itemprop="description" content="" />
 		<!--build:css css/vendor.css-->
 		<link rel="stylesheet" href="bower/normalize.css/normalize.css" />
+		<link rel="stylesheet" href="bower/jquery-nice-select/css/nice-select.css" />
 		<!--endbuild-->
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/style-edit.css" />
@@ -73,7 +74,7 @@
 			<!--block header end-->
 			<div class="content-wrap">
 				<div class="toolbar">
-					<a class="toolbar__el" href="#">
+					<a class="toolbar__el toolbar__el--active" href="#">
 						<div class="toolbar__el-icon">
 							<svg class="icon">
 								<use xlink:href="#operator"></use>
@@ -100,14 +101,393 @@
 						<div class="toolbar__el-text">История</div>
 					</a>
 				</div>
-				<div class="content">текст</div>
+				<div class="content">
+					<div class="main-cont">
+						<div class="title">
+							<div class="title-text">Кабинет диетолога</div>
+							<div class="title-btn">
+								<div class="title-btn-icon">
+									<svg class="icon">
+										<use xlink:href="#plus"></use>
+									</svg>
+								</div>
+								<div class="title-btn__text">Загрузить день</div>
+							</div>
+						</div>
+					</div>
+					<!--days list-->
+					<div class="days-wrap">
+						<div class="main-cont">
+							<div class="days-tab">
+								<div class="days-tab__el days-tab__el--active">Normal</div>
+								<div class="days-tab__el">Light</div>
+								<div class="days-tab__el">Strong</div>
+								<div class="days-tab__el">Veggi</div>
+								<div class="days-tab__el">Balance</div>
+								<div class="days-tab__text">Выберите программу и день для загрузки</div>
+							</div>
+							<div class="days-tab-wrap">
+								<div class="days-el days-el--pn">
+									<div class="days-el__name">Пн</div>
+									<div class="days-el__title">Понедельник</div>
+								</div>
+								<div class="days-el days-el--vt">
+									<div class="days-el__name">Вт</div>
+									<div class="days-el__title">Вторник</div>
+								</div>
+								<div class="days-el days-el--sr">
+									<div class="days-el__name">Ср</div>
+									<div class="days-el__title">Среда</div>
+								</div>
+								<div class="days-el days-el--ht">
+									<div class="days-el__name">Чт</div>
+									<div class="days-el__title">Четверг</div>
+								</div>
+								<div class="days-el days-el--pt">
+									<div class="days-el__name">Пт</div>
+									<div class="days-el__title">Пятница</div>
+								</div>
+								<div class="days-el days-el--sb">
+									<div class="days-el__name">Сб</div>
+									<div class="days-el__title">Суббота</div>
+								</div>
+								<div class="days-el days-el--vs">
+									<div class="days-el__name">Вс</div>
+									<div class="days-el__title">Воскресение</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--char-->
+					<div class="main-cont">
+						<div class="chart-wrap">
+							<div class="chart-container">
+								<div class="chart-wrap__el">
+									<div class="fakeCircle"></div>
+									<div class="chart-wrap__value">
+										<div class="chart-wrap__value-title">2 145</div>
+										<div class="chart-wrap__value-text">Ккал</div>
+									</div>
+									<!--порядок значени 1.белки 2.Жиры 3.Углеводы-->
+									<canvas id="donut" width="180" height="180" data-val="10,20,30"></canvas>
+								</div>
+								<div class="chart-info">
+									<div class="chart-info__title">Normal - понедельник</div>
+									<div class="chart-descr">
+										<div class="book-row">
+											<div class="book-row__title">
+												<div class="book-row__title-cont">
+													<div class="book-row__title-icon"></div>
+													<div class="book-row__title-text">Белки</div>
+												</div>
+											</div>
+											<div class="book-row__dot"></div>
+											<div class="book-row__value">140</div>
+										</div>
+										<div class="book-row">
+											<div class="book-row__title">
+												<div class="book-row__title-cont">
+													<div class="book-row__title-icon book-row__title-icon-yellow"></div>
+													<div class="book-row__title-text">Жиры</div>
+												</div>
+											</div>
+											<div class="book-row__dot"></div>
+											<div class="book-row__value">120</div>
+										</div>
+										<div class="book-row">
+											<div class="book-row__title">
+												<div class="book-row__title-cont">
+													<div class="book-row__title-icon book-row__title-icon-orange"></div>
+													<div class="book-row__title-text">Углеводы</div>
+												</div>
+											</div>
+											<div class="book-row__dot"></div>
+											<div class="book-row__value">560</div>
+										</div>
+									</div>
+								</div>
+								<div class="chart-get">
+									<div class="chart-get__text">Нет изменений в таблице</div>
+									<div class="chart-save chart-save--open">
+										<div class="chart-save__bar"></div>
+										<div class="chart-save__icon">
+											<svg class="icon">
+												<use xlink:href="#checked"></use>
+											</svg>
+										</div>
+										<div class="chart-save__text">Сохранить день</div>
+									</div>
+									<div class="chart-close">Закрыть</div>
+									<div class="chart-get__reset">Сбросить изменения</div>
+								</div>
+								<div class="arrow-toggle arrow-toggle--chart">
+									<svg class="icon">
+										<use xlink:href="#arrow-up"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="table-info">
+								<div class="is-table">
+									<div class="is-thead">
+										<div class="is-tr">
+											<div class="is-td table-info__name">Блюдо</div>
+											<div class="is-td table-info__choose">Прием</div>
+											<div class="is-td table-info__type">Б</div>
+											<div class="is-td table-info__type">Ж</div>
+											<div class="is-td table-info__type">У</div>
+											<div class="is-td table-info__val">Ккал. расчетно</div>
+											<div class="is-td table-info__val">Ккал. введено</div>
+											<div class="is-td table-info__cost">Себестоимость</div>
+										</div>
+									</div>
+									<div class="is-tbody">
+										<div class="is-tr">
+											<div class="is-td table-info__name">
+												<textarea class="table-info__name-val" name="" value="" wrap="soft">Блинчики из цельнозерновой муки с творогом</textarea>
+											</div>
+											<div class="is-td table-info__choose">
+												<select class="select-beauty">
+													<option>1-й завтрак</option>
+													<option>2-й завтрак</option>
+													<option>3-й завтрак</option>
+												</select>
+											</div>
+											<div class="is-td table-info__type"> 21,2</div>
+											<div class="is-td table-info__type"> 7,9</div>
+											<div class="is-td table-info__type"> 12,9</div>
+											<div class="is-td table-info__val">235</div>
+											<div class="is-td table-info__val">423</div>
+											<div class="is-td table-info__cost">
+												<div class="table-info__cost-wrap">
+													<div class="table-info__cost-val">1423 р</div>
+													<div class="table-info__remove">
+														<div class="table-info__remove-icon">
+															<svg class="icon">
+																<use xlink:href="#remove"></use>
+															</svg>
+														</div>
+														<div class="table-info__remove-text">Удалить</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="is-tr">
+											<div class="is-td table-info__name">
+												<textarea class="table-info__name-val" name="" value="" wrap="soft">Блинчики из цельнозерновой муки с творогом</textarea>
+											</div>
+											<div class="is-td table-info__choose">
+												<select class="select-beauty">
+													<option>1-й завтрак</option>
+													<option>2-й завтрак</option>
+													<option>3-й завтрак</option>
+												</select>
+											</div>
+											<div class="is-td table-info__type"> 21,2</div>
+											<div class="is-td table-info__type"> 7,9</div>
+											<div class="is-td table-info__type"> 12,9</div>
+											<div class="is-td table-info__val">235</div>
+											<div class="is-td table-info__val">423</div>
+											<div class="is-td table-info__cost">
+												<div class="table-info__cost-wrap">
+													<div class="table-info__cost-val">1423 р</div>
+													<div class="table-info__remove">
+														<div class="table-info__remove-icon">
+															<svg class="icon">
+																<use xlink:href="#remove"></use>
+															</svg>
+														</div>
+														<div class="table-info__remove-text">Удалить</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="is-tr">
+											<div class="is-td table-info__name">
+												<textarea class="table-info__name-val" name="" value="" wrap="soft">Блинчики из цельнозерновой муки с творогом</textarea>
+											</div>
+											<div class="is-td table-info__choose">
+												<select class="select-beauty">
+													<option>1-й завтрак</option>
+													<option>2-й завтрак</option>
+													<option>3-й завтрак</option>
+												</select>
+											</div>
+											<div class="is-td table-info__type"> 21,2</div>
+											<div class="is-td table-info__type"> 7,9</div>
+											<div class="is-td table-info__type"> 12,9</div>
+											<div class="is-td table-info__val">235</div>
+											<div class="is-td table-info__val">423</div>
+											<div class="is-td table-info__cost">
+												<div class="table-info__cost-wrap">
+													<div class="table-info__cost-val">1423 р</div>
+													<div class="table-info__remove">
+														<div class="table-info__remove-icon">
+															<svg class="icon">
+																<use xlink:href="#remove"></use>
+															</svg>
+														</div>
+														<div class="table-info__remove-text">Удалить</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="is-tr">
+											<div class="is-td table-info__name">
+												<textarea class="table-info__name-val" name="" value="" wrap="soft">Блинчики из цельнозерновой муки с творогом</textarea>
+											</div>
+											<div class="is-td table-info__choose">
+												<select class="select-beauty">
+													<option>1-й завтрак</option>
+													<option>2-й завтрак</option>
+													<option>3-й завтрак</option>
+												</select>
+											</div>
+											<div class="is-td table-info__type"> 21,2</div>
+											<div class="is-td table-info__type"> 7,9</div>
+											<div class="is-td table-info__type"> 12,9</div>
+											<div class="is-td table-info__val">235</div>
+											<div class="is-td table-info__val">423</div>
+											<div class="is-td table-info__cost">
+												<div class="table-info__cost-wrap">
+													<div class="table-info__cost-val">1423 р</div>
+													<div class="table-info__remove">
+														<div class="table-info__remove-icon">
+															<svg class="icon">
+																<use xlink:href="#remove"></use>
+															</svg>
+														</div>
+														<div class="table-info__remove-text">Удалить</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="is-tr">
+											<div class="is-td table-info__name">
+												<textarea class="table-info__name-val" name="" value="" wrap="soft">Блинчики из цельнозерновой муки с творогом</textarea>
+											</div>
+											<div class="is-td table-info__choose">
+												<select class="select-beauty">
+													<option>1-й завтрак</option>
+													<option>2-й завтрак</option>
+													<option>3-й завтрак</option>
+												</select>
+											</div>
+											<div class="is-td table-info__type"> 21,2</div>
+											<div class="is-td table-info__type"> 7,9</div>
+											<div class="is-td table-info__type"> 12,9</div>
+											<div class="is-td table-info__val">235</div>
+											<div class="is-td table-info__val">423</div>
+											<div class="is-td table-info__cost">
+												<div class="table-info__cost-wrap">
+													<div class="table-info__cost-val">1423 р</div>
+													<div class="table-info__remove">
+														<div class="table-info__remove-icon">
+															<svg class="icon">
+																<use xlink:href="#remove"></use>
+															</svg>
+														</div>
+														<div class="table-info__remove-text">Удалить</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="is-tr is-tr--empty hidden">
+											<div class="is-td table-info__name">
+												<textarea class="table-info__name-val" name="" value="" wrap="soft"></textarea>
+											</div>
+											<div class="is-td table-info__choose">
+												<select class="select-beauty">
+													<option>1-й завтрак</option>
+													<option>2-й завтрак</option>
+													<option>3-й завтрак</option>
+												</select>
+											</div>
+											<div class="is-td table-info__type">0</div>
+											<div class="is-td table-info__type">0</div>
+											<div class="is-td table-info__type">0</div>
+											<div class="is-td table-info__val">0</div>
+											<div class="is-td table-info__val">0</div>
+											<div class="is-td table-info__cost">
+												<div class="table-info__cost-wrap">
+													<div class="table-info__cost-val">0</div>
+													<div class="table-info__remove">
+														<div class="table-info__remove-icon">
+															<svg class="icon">
+																<use xlink:href="#remove"></use>
+															</svg>
+														</div>
+														<div class="table-info__remove-text">Удалить</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="table-info__add">
+								<div class="table-info__add-icon">
+									<svg class="icon">
+										<use xlink:href="#plus"></use>
+									</svg>
+								</div>
+								<div class="table-info__add-text">Добавить строку</div>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<!--days-row-->
+					<div class="main-cont">
+						<div class="days-row">
+							<div class="days-row__title">Light - пятница</div>
+							<div class="days-row__cal">1 923 Ккал</div>
+							<div class="days-row__bar">
+								<div class="days-row__bar-el days-row__bar--carbohydrate" data-bar="50"></div>
+								<div class="days-row__bar-el days-row__bar--fat" data-bar="20"></div>
+								<div class="days-row__bar-el days-row__bar--protein" data-bar="30"></div>
+							</div>
+							<div class="days-row__btn">Закрыть без сохранения</div>
+							<div class="arrow-toggle">
+								<svg class="icon">
+									<use xlink:href="#arrow-up"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="days-row">
+							<div class="days-row__title">Light - пятница</div>
+							<div class="days-row__cal">1 923 Ккал</div>
+							<div class="days-row__bar">
+								<div class="days-row__bar-el days-row__bar--carbohydrate" data-bar="50"></div>
+								<div class="days-row__bar-el days-row__bar--fat" data-bar="20"></div>
+								<div class="days-row__bar-el days-row__bar--protein" data-bar="30"></div>
+							</div>
+							<div class="days-row__btn">Закрыть без сохранения</div>
+							<div class="arrow-toggle">
+								<svg class="icon">
+									<use xlink:href="#arrow-up"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<!--message-empty-->
+					<div class="days-empty">
+						<div class="days-empty__icon">
+							<svg class="icon">
+								<use xlink:href="#plus"></use>
+							</svg>
+						</div>
+						<div class="days-empty__text">Нет загруженны дней, воспользуйтесь формой выше</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!--build:js js/combined.js-->
 		<script src="bower/jquery/dist/jquery.js"></script>
 		<script src="bower/svg4everybody/dist/svg4everybody.js"></script>
+		<script src="bower/chart.js/dist/Chart.min.js"></script>
 		<!--script(src='bower/owl.carousel/dist/owl.carousel.min.js')-->
 		<!--script(src="js/jquery.smoothscroll.js")-->
+		<script src="bower/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+		<script src="js/autosize.min.js"></script>
 		<!-- endbuild-->
 		<script src="js/script.js"></script>
 		<script src="js/script-edit.js"></script>

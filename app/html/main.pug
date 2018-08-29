@@ -5,7 +5,7 @@ include block_html/_include.pug
 	+header()
 	.content-wrap
 		.toolbar
-			a(href="#").toolbar__el
+			a(href="#").toolbar__el.toolbar__el--active
 				.toolbar__el-icon
 					+icon("operator","icon")
 				.toolbar__el-text Оператор
@@ -19,5 +19,175 @@ include block_html/_include.pug
 				.toolbar__el-icon
 					+icon("calendar","icon")
 				.toolbar__el-text История
-		.content текст
+		.content
+			.main-cont
+				.title
+					.title-text Кабинет диетолога
+					.title-btn
+						.title-btn-icon
+							+icon("plus","icon")
+						.title-btn__text Загрузить день
+
+
+			//days list
+			.days-wrap
+				.main-cont
+					.days-tab
+						.days-tab__el.days-tab__el--active Normal
+						.days-tab__el Light
+						.days-tab__el Strong
+						.days-tab__el Veggi
+						.days-tab__el Balance
+						.days-tab__text Выберите программу и день для загрузки
+					.days-tab-wrap
+						.days-el.days-el--pn
+							.days-el__name Пн
+							.days-el__title Понедельник
+						.days-el.days-el--vt
+							.days-el__name Вт
+							.days-el__title Вторник
+						.days-el.days-el--sr
+							.days-el__name Ср
+							.days-el__title Среда
+						.days-el.days-el--ht
+							.days-el__name Чт
+							.days-el__title Четверг
+						.days-el.days-el--pt
+							.days-el__name Пт
+							.days-el__title Пятница
+						.days-el.days-el--sb
+							.days-el__name Сб
+							.days-el__title Суббота
+						.days-el.days-el--vs
+							.days-el__name Вс
+							.days-el__title Воскресение
+
+
+			//char
+			.main-cont
+				.chart-wrap
+					.chart-container
+						.chart-wrap__el
+							.fakeCircle
+							.chart-wrap__value
+								.chart-wrap__value-title 2 145
+								.chart-wrap__value-text Ккал
+							//порядок значени 1.белки 2.Жиры 3.Углеводы
+							canvas(id="donut" width="180" height="180" data-val="10,20,30")
+						.chart-info
+							.chart-info__title Normal - понедельник
+							.chart-descr
+								.book-row
+									.book-row__title
+										.book-row__title-cont
+											.book-row__title-icon
+											.book-row__title-text Белки
+									.book-row__dot
+									.book-row__value 140
+								.book-row
+									.book-row__title
+										.book-row__title-cont
+											.book-row__title-icon.book-row__title-icon-yellow
+											.book-row__title-text Жиры
+									.book-row__dot
+									.book-row__value 120
+								.book-row
+									.book-row__title
+										.book-row__title-cont
+											.book-row__title-icon.book-row__title-icon-orange
+											.book-row__title-text Углеводы
+									.book-row__dot
+									.book-row__value 560
+
+
+						.chart-get
+							.chart-get__text Нет изменений в таблице
+							.chart-save.chart-save--open
+								.chart-save__bar
+								.chart-save__icon
+									+icon("checked","icon")
+								.chart-save__text Сохранить день
+							.chart-close Закрыть
+							.chart-get__reset Сбросить изменения
+						.arrow-toggle.arrow-toggle--chart
+							+icon("arrow-up","icon")
+					.table-info
+						.is-table
+							.is-thead
+								.is-tr
+									.is-td.table-info__name Блюдо
+									.is-td.table-info__choose Прием
+									.is-td.table-info__type Б
+									.is-td.table-info__type Ж
+									.is-td.table-info__type У
+									.is-td.table-info__val Ккал. расчетно
+									.is-td.table-info__val Ккал. введено
+									.is-td.table-info__cost Себестоимость
+							.is-tbody
+								- for (var i=0;i<5;i++)
+									.is-tr
+										.is-td.table-info__name
+											textarea(name="",  value="" class="table-info__name-val" wrap="soft") Блинчики из цельнозерновой муки с творогом
+										.is-td.table-info__choose
+											select.select-beauty
+												option 1-й завтрак
+												option 2-й завтрак
+												option 3-й завтрак
+										.is-td.table-info__type  21,2
+										.is-td.table-info__type  7,9
+										.is-td.table-info__type  12,9
+										.is-td.table-info__val 235
+										.is-td.table-info__val 423
+										.is-td.table-info__cost
+											.table-info__cost-wrap
+												.table-info__cost-val 1423 р
+												.table-info__remove
+													.table-info__remove-icon
+														+icon("remove","icon")
+													.table-info__remove-text Удалить
+								.is-tr.is-tr--empty.hidden
+									.is-td.table-info__name
+										textarea(name="",  value="" class="table-info__name-val" wrap="soft")
+									.is-td.table-info__choose
+										select.select-beauty
+											option 1-й завтрак
+											option 2-й завтрак
+											option 3-й завтрак
+									.is-td.table-info__type 0
+									.is-td.table-info__type 0
+									.is-td.table-info__type 0
+									.is-td.table-info__val 0
+									.is-td.table-info__val 0
+									.is-td.table-info__cost
+										.table-info__cost-wrap
+											.table-info__cost-val 0
+											.table-info__remove
+												.table-info__remove-icon
+													+icon("remove","icon")
+												.table-info__remove-text Удалить
+					.table-info__add
+						.table-info__add-icon
+							+icon("plus","icon")
+						.table-info__add-text Добавить строку
+			br
+			//days-row
+			.main-cont
+				- for (var i=0;i<2;i++)
+					.days-row
+						.days-row__title Light - пятница
+						.days-row__cal 1 923 Ккал
+						.days-row__bar
+							.days-row__bar-el(data-bar="50").days-row__bar--carbohydrate
+							.days-row__bar-el(data-bar="20").days-row__bar--fat
+							.days-row__bar-el(data-bar="30").days-row__bar--protein
+						.days-row__btn Закрыть без сохранения
+						.arrow-toggle
+							+icon("arrow-up","icon")
+
+			//message-empty
+			.days-empty
+				.days-empty__icon
+					+icon("plus","icon")
+				.days-empty__text Нет загруженны дней, воспользуйтесь формой выше
+
 include ./block_html/_script.pug

@@ -17,12 +17,13 @@ silver = #DDDDDD
 gray = #AAAAAA
 black = #111111
 
-$green = #65d9ce
+$blue = #65d9ce
 $gray--light = #eff1f5
 $gray = #9099aa
 $dark = #31373d
 $green = #41cf1c
 $yellow = #ffdb4d
+$orange = #ff6600
 
 $main-text-color = black
 $link-color = black
@@ -124,7 +125,6 @@ btnStyleLight(br-btn,color-btn)
 		border br-btn solid darken(color-btn,20)
 
 .btn
-	up()
 	br(24px)
 	tr(all)
 	display inline-block
@@ -135,7 +135,10 @@ btnStyleLight(br-btn,color-btn)
 	font-weight 600
 	border 1px solid rgba(0, 0, 0, 0.12)
 	&:hover
+		box-shadow 0 2px 4px rgba(63, 95, 151, 0.16)
 		cursor pointer
+		background: white
+		border 1px solid rgba(63, 95, 151, 0.16)
 
 .btn--sm
 	@extend .btn
@@ -169,6 +172,7 @@ btnStyleLight(br-btn,color-btn)
 	.nav-icon
 		fill white
 	&:hover
+		background $green
 		box-shadow 0 0 0
 	&:active
 		background-color darken($green,20)
